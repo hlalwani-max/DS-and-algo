@@ -6,25 +6,21 @@
 
 Input 1:
     A = [1, 2, 3]
-
 Output 1:
     [1, 3, 2]
 
 Input 2:
     A = [3, 2, 1]
-
 Output 2:
     [1, 2, 3]
 
 Input 3:
     A = [1, 1, 5]
-
 Output 3:
     [1, 5, 1]
 
 Input 4:
     A = [20, 50, 113]
-
 Output 4:
     [20, 113, 50]
 
@@ -54,7 +50,7 @@ sort right split
 class Solution:
     # @param A : list of integers
     # @return a list of integers
-    def nextPermutation(self, A):
+    def nextPermutation1(self, A):
         lenA = len(A)
         k = lenA - 2
         while k > -1 and A[k] > A[k + 1]:
@@ -95,6 +91,7 @@ class Solution:
             start, end = start + 1, end - 1
 
 
-inp = [5, 4, 3, 2]
-out = Solution().nextPermutation(inp)
-print(out)
+if __name__ == "__main__":
+    arr = [5, 4, 3, 2]
+    out = Solution().nextPermutation(arr)
+    print(out)
