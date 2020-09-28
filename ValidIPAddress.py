@@ -17,14 +17,14 @@ class Solution:
     def restoreIpAddresses(self, A):
 
         def validity(str):
-            if len(str) > 3 or len(str) == 0:
-                return False
+            if 0 <= len(str) <= 3:
 
-            if len(str) > 1 and str[0] == "0":
-                return False
+                if len(str) > 1 and str[0] == "0":
+                    return False
 
-            if 0 <= int(str) <= 255:
-                return True
+                if 0 <= int(str) <= 255:
+                    return True
+
             return False
 
         N = len(A)
