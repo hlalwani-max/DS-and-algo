@@ -47,6 +47,8 @@ class Solution:
     # @param A : list of integers
     # @param B : integer
     # @return an integer
+    # Idea- If difference is less than target, increasing j will increase the difference, else increase i to find the new difference forward. If equal return true.
+    # TC - O(NlogN), SC- O(1)
     def solve(self, A, B):
         N = len(A)
         A.sort()
@@ -99,6 +101,7 @@ class Solution:
             return False
 
         for i in range(N):
+
             target = B + A[i]
             if binarySearch(A, i + 1, N - 1, target): return 1
 
@@ -106,6 +109,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    arr, target = [5, 10, 3, 2, 50, 80], -1
+    arr, target = [5, 10, 3, 2, 50, 80], 78
     out = Solution().solve(arr, target)
     print("Result: ", True if out == 1 else False)
