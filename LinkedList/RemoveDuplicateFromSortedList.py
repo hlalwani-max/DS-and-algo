@@ -15,7 +15,20 @@ from LinkedList import convertLToLL, printLL
 class Solution:
     # @param A : head node of linked list
     # @return the head node in the linked list
+    # source- https://www.youtube.com/watch?v=wIB5sg_Ulx4
     def deleteDuplicates(self, A):
+        cur = A
+
+        while cur:
+            if cur.next and cur.val == cur.next.val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+
+        return A
+
+    # Another approach
+    def deleteDuplicates1(self, A):
         cur = A
         found = False
         while cur:
