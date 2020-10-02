@@ -1,0 +1,43 @@
+'''
+Linked List- https://www.interviewbit.com/problems/remove-duplicates-from-sorted-list/
+concept- simply iteration.
+'''
+
+from LinkedList import convertLToLL, printLL
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#    def __init__(self, x):
+#        self.val = x
+#        self.next = None
+
+class Solution:
+    # @param A : head node of linked list
+    # @return the head node in the linked list
+    def deleteDuplicates(self, A):
+        cur = A
+        found = False
+        while cur:
+            tmp = cur
+            # iterate to the last occured same cur.
+            while tmp.next and tmp.next.val == cur.val:
+                found = True
+                tmp = tmp.next
+
+            if found:
+                # change cur next to next of last occured same cur.
+                cur.next = tmp.next
+                found = False
+
+            cur = cur.next
+
+        return A
+
+
+if __name__ == "__main__":
+    arr = [1, 1, 1, 3]
+    LL = convertLToLL(arr)
+    out = Solution().deleteDuplicates(LL)
+    print("New list with no duplicates is:")
+    printLL(out)
