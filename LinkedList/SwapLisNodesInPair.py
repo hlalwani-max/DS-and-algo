@@ -26,6 +26,7 @@ class Solution:
     # @return the head node in the linked list
     # TC - O(N), SC- O(1)
     def swapPairs(self, A):
+        # sanity check: if no or one element.
         if not A or A.next is None:
             return A
 
@@ -36,7 +37,7 @@ class Solution:
         while cur and cur.next:
             h, t = cur, cur.next
 
-            # store next node for swap to continue iterateration to LL
+            # store next node for swap to continue iteration to linked list.
             nextNode = t.next
 
             # modify pointers
