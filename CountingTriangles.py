@@ -24,6 +24,15 @@ class Solution:
         mod = 10 ** 9 + 7
         ans = 0
 
+        for i in range(N-2):
+            a = A[i]
+
+    def nTriang1(self, A):
+        A.sort()
+        N = len(A)
+        mod = 10 ** 9 + 7
+        ans = 0
+
         for i in range(N - 2):
             a = A[i]
 
