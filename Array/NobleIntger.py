@@ -30,7 +30,7 @@ class Solution:
     # @param A : list of integers
     # @return an integer
     # Idea- sort list, finding number of elements greater than the element 'p' becomes easy.
-    # TC- O(N), SC- O(1)
+    # TC- O(NlogN), SC- O(1)
     def solve(self, A):
         A.sort()
         N = len(A)

@@ -20,7 +20,7 @@ So, in example case, you will return [2, 1, 4, 3].
 class Solution:
     # @param A : list of integers
     # @return a list of integers
-    # TC- O(N), SC- O(1)
+    # TC- O(NlogN), SC- O(1)
     # Idea- jump two, perform swapping in sorted array.
     def wave(self, A):
         N = len(A)
