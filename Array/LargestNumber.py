@@ -1,5 +1,15 @@
-# Array- Largest Number
-# https://www.interviewbit.com/problems/largest-number/
+'''
+https://www.interviewbit.com/problems/largest-number/
+Amazon Goldman Sachs Microsoft
+[Hard] Concept- sorting (modify comparator)
+
+Given a list of non negative integers, arrange them such that they form the largest number.
+
+For example:
+Given [3, 30, 34, 5, 9], the largest formed number is 9534330.
+
+Note: The result may be very large, so you need to return a string instead of an integer.
+'''
 import functools
 
 
@@ -38,7 +48,6 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    inp = [3, 34, 345, 5, 9, 99, 95]
-    print("Input: ", inp)
-    ans = sol.largestNumber(inp)
-    print("Output: ", ans)
+    arr = [3, 30, 34, 5, 9]
+    ans = sol.largestNumber(arr)
+    print("Largest Number possible is {}.".format(ans))
