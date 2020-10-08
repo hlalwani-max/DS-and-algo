@@ -1,7 +1,7 @@
 '''
 https://www.interviewbit.com/problems/maxspprod/
 
-Concept- using stack to replace all lower or equal values (of current value) for current value.
+Concept- using stack to replace all lower or equal values in stack for current value.
 
 Problem-
 You are given an array A containing N integers. The special product of each ith integer in this array is defined as the product of the following:
@@ -65,7 +65,7 @@ class Solution:
             while stack and A[i] >= A[stack[-1]]:
                 stack.pop()
 
-            # Since all lesser than A[i] elements are removed from stack, only greater are left. If not, default lefValue remains 0.
+            # Since all lesser than A[i] elements are removed from stack, only greater are left. Compare curr with stack top. If not, default lefValue remains 0.
             if stack and A[stack[-1]] > A[i]:
                 leftVal[i] = stack[-1]
 
