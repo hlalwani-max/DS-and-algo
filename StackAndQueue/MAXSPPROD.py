@@ -1,7 +1,7 @@
 '''
 https://www.interviewbit.com/problems/maxspprod/
 
-Concept- using stack to replace all lower values (of current value) for current value.
+Concept- using stack to replace all lower or equal values (of current value) for current value.
 
 Problem-
 You are given an array A containing N integers. The special product of each ith integer in this array is defined as the product of the following:
@@ -10,7 +10,7 @@ LeftSpecialValue: For an index i, it is defined as the index j such that A[j]>A[
 RightSpecialValue: For an index i, it is defined as the index j such that A[j]>A[i] and (j>i). If multiple A[j]'s are present in multiple positions, the RightSpecialValue is the minimum value of j.
 Write a program to find the maximum special product of any integer in the array.
 
-NOTE: As the answer can be large, output your answer modulo 109 + 7.
+NOTE: As the answer can be large, output your answer modulo 10^9 + 7.
 
 Problem Constraints
 1 <= N <= 105
@@ -51,7 +51,7 @@ Explanation 2:
 class Solution:
     # @param A : list of integers
     # @return an integer
-    # TC- O(n), SC- O(n), because array is only traversed once, and elements in stack only pushed once adding total complexity to O(2n).
+    # TC- O(n), SC- O(n), because array is only traversed once, and elements in stack only pushed  and popped once adding total complexity to O(3n).
     # Idea- for ith element, remove all the elements in stack that are less than or equal to ith, and add ith element to stack.
     # Doing so, at each point you have greater value left from 0 to i-1 closest to i. Repeat same for rightValue in reverse order.
     def maxSpecialProduct(self, A):
