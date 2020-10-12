@@ -60,6 +60,7 @@ class Solution:
             self.helper(ind + 1, length, newCombo, digits, combinations)
 
     # TC = O(3^N * 4^N), N = number of elements in input that has 3 mappings, M = number of elements that has 4 mappings.
+    # SC - O(3^N * 4^N)
     # Idea (Naive) - Run combinations of two at a time and repeat.
     def letterCombinations1(self, digits):
         N = len(digits)
