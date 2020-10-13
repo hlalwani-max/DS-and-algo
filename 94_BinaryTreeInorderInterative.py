@@ -39,10 +39,6 @@ class Solution:
 
         return res
 
-'''
-Solution 2
-
-class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         if not root:
             return []
@@ -67,5 +63,3 @@ class Solution:
                 flag = False
                 
         return res
-
-'''
