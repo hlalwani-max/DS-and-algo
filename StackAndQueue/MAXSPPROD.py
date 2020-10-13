@@ -65,7 +65,7 @@ class Solution:
             while stack and A[i] >= A[stack[-1]]:
                 stack.pop()
 
-            # Since all lesser than A[i] elements are removed from stack, only greater are left. Compare curr with stack top. If not, default lefValue remains 0.
+            # compare stack top and current.
             if stack and A[stack[-1]] > A[i]:
                 leftVal[i] = stack[-1]
 
