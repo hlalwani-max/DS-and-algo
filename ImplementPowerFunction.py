@@ -1,9 +1,25 @@
 '''
+https://www.interviewbit.com/problems/implement-power-function/
+Google Linkedin
+
+Concepts-
+
 Math theories-
 1. (A x B) % M = ( (A % M) x (B % M) ) % M
 2. -A % M ≡ (M-A) % M
+
+Problem-
+Implement pow(x, n) % d.
+In other words, given x, n and d, find (xn % d).
+
+Note that remainders on division cannot be negative.
+In other words, make sure the answer you return is non negative.
+
+Input : x = 2, n = 3, d = 3
+Output : 2
+
+2^3 % 3 = 8 % 3 = 2.
 '''
-#Math- https://www.interviewbit.com/problems/implement-power-function/
 
 class Solution:
     # @param A : integer
