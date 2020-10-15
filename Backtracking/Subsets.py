@@ -70,8 +70,20 @@ class Solution:
             self.generateSubsets(A, combinations, curr_combo, i + 1, length)
             curr_combo.pop()
 
+    # TC - (N * 2 ^ N), SC - (N * 2 ^ N)
+    # Idea - Using cascading: Let's start from empty subset in output list. At each step one takes new integer into
+    # consideration and generates new subsets from the existing ones.
+    def subsets1(self, nums):
+        nums.sort()
+        output = [[]]
+
+        for num in nums:
+            output += [curr + [num] for curr in output]
+
+        return output
+
 
 if __name__ == "__main__":
     arr = [1, 3, 2]
-    out = Solution().subsets(arr)
+    out = Solution().subsets1(arr)
     print("Possible unique subsets (in ascending order) is: {}".format(out))
