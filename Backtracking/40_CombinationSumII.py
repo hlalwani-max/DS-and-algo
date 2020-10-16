@@ -29,6 +29,7 @@ class Solution:
     # @param A : list of integers
     # @param B : integer
     # @return a list of list of integers
+    # TC- O(n^n(Math.pow(n,n))), since multiple occurance of same element.
     def combinationSum(self, A, B):
         A.sort()
         start, length = 0, len(A)
