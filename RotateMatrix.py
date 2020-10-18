@@ -1,4 +1,4 @@
-# Interviewbit - haven't done efficient solution using graph and no additional spacem
+# Interviewbit - haven't done efficient solution using graph and no additional space
 import copy
 
 
