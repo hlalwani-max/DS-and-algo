@@ -63,64 +63,64 @@ s consists of digits from 0 to 9 only.
 class Solution:
     def findLexSmallestString(self, s: str, a: int, b: int) -> str:
         N = len(s)
-        odd = False
+        seen = set()
+        ans = s
+        self.dfs(s, ans, seen, N, a, b)
+        return ans
 
-        if N == 0:
-            return s
+    #
+    def dfs(self, s, ans, seen, N, a, b):
+        if s in seen:
+            return
 
-        # if b is even, we can maniplate odd digits too by rotating first.
-        if b & 1:
-            odd = True
+        seen.add(s)
+        ans = min(ans, s)
 
-        if odd:
-            # rotate s at least once so we can also manipulate odd digits. (zero based)
-            s = self.addOddIndices(s, N, a)
-            print(s)
-            s = self.rotateOnce(s, N, b)
-            s = self.addOddIndices(s, N, b)
-            print(s)
-        else:
-            s = self.addOddIndices(s, N, a)
+        s = self.addStr(s, N, a)
+        self.dfs(s, ans, seen, N, a, b)
 
-        # print(s)
         s = self.rotate(s, N, b)
+        self.dfs(s, ans, seen, N, a, b)
 
-        return s
+        return
 
-    def rotateOnce(self, ss, length, b):
-        if length == 1:
-            return ss
-        else:
-            limit = b
-            new_s = ss
-            while limit > 0:
-                new_s = new_s[-1] + new_s[:-1]
-                limit -= 1
+    def findLexSmallestString1(self, s: str, a: int, b: int) -> str:
+        seen = set(s)
 
-            return new_s
+        stack = [s]
+
+        N = len(s)
+        ans = s
+
+        while stack:
+            cur_s = stack.pop()
+            minn = ans if int(ans) < int(cur_s) else cur_s
+            ans = minn
+
+            # option1: add
+            cur_s = self.addStr(cur_s, N, a)
+
+            if cur_s not in seen:
+                seen.add(cur_s)
+                stack.append(cur_s)
+
+            # option2: rotate
+            cur_s = self.rotate(cur_s, N, b)
+
+            if cur_s not in seen:
+                seen.add(cur_s)
+                stack.append(cur_s)
+
+        return ans
 
     def rotate(self, ss, length, b):
-        if length == 1:
-            return ss
+        new_ss = ss[length - b:] + ss[:length - b]
 
-        for i in range(length // b + 1):
-            limit = b
-            new_s = ss
-            while limit > 0:
-                new_s = new_s[-1] + new_s[:-1]
-                limit -= 1
+        return new_ss
 
-            if int(new_s) < int(ss):
-                ss = new_s
-
-        return ss
-
-    def addOddIndices(self, ss, length, a):
-        i = 1
-        while i < length:
-            while int(str(int(ss[i]) + a)[-1]) < int(ss[i]):
-                ss = ss[:i] + str(int(ss[i]) + a)[-1] + ss[i + 1:]
-            i += 2
+    def addStr(self, ss, length, a):
+        for i in range(1, length, 2):
+            ss = ss[:i] + str((int(ss[i]) + a) % 10) + ss[i + 1:]
 
         return ss
 
