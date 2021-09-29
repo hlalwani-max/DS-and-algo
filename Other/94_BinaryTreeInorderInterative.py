@@ -39,7 +39,7 @@ class Solution:
 
         return res
 
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
+    def inorderTraversal(self, root):
         if not root:
             return []
         

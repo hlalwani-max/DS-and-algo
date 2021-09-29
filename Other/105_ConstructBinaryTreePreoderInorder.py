@@ -44,7 +44,7 @@ class Solution:
 class Solution:
     pre_index = 0
 
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+    def buildTree(self, preorder: List[int], inorder: List[int]):
         if len(preorder) == 0:
             return
         if self.pre_index >= len(preorder):

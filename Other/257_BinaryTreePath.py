@@ -9,7 +9,7 @@ class Solution:
     res = []
     backtrack = []
 
-    def binaryTreePaths(self, root: TreeNode) -> List[str]:
+    def binaryTreePaths(self, root):
         self.res = []
         self.backtrack = []
         self.res = self.helper(root)

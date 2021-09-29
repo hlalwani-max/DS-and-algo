@@ -27,7 +27,7 @@ class TreeNode:
 
 
 class Solution:
-    def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+    def buildTree(self, inorder: List[int], postorder: List[int]):
         self.post_index = len(postorder) - 1
         if self.post_index == -1:
             return

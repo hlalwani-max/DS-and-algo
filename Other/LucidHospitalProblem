@@ -1,10 +1,7 @@
 #!/bin/python3
 
-import math
 import os
-import random
-import re
-import sys
+import queue
 
 #
 # Complete the 'hospital' function below.
@@ -21,8 +18,6 @@ import sys
 # 3. An edge exists between <name>_from[i] and <name>_to[i].
 #
 #
-import itertools
-import queue
 
 
 def hospital(city_nodes, city_from, city_to):

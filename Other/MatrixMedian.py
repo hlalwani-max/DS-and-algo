@@ -13,7 +13,7 @@ class Solution:
 
             # Check if middle element is
             # less than or equal to key
-            if (arr[mid] <= key):
+            if arr[mid] <= key:
 
                 # At least (mid + 1) elements are there
                 # whose values are less than
@@ -32,24 +32,23 @@ class Solution:
     def findMedian(self, A):
         r, c = len(A), len(A[0])
         if r == 1:
-            return (A[c//2])
+            return (A[c // 2])
         else:
             minA, maxA = A[0][0], 0
         for i in range(r):
             if A[i][0] < minA:
                 minA = A[i][0]
-            if A[i][c-1] < maxA:
-                maxA = A[i][c-1]
+            if A[i][c - 1] < maxA:
+                maxA = A[i][c - 1]
 
         desired = (r * c) // 2 + 1
-
 
         while minA < maxA:
             mid = minA + (maxA - minA) // 2
 
             count = 0
             for i in range(r):
-                count+= self.binarySearch(A[i], c, mid)
+                count += self.binarySearch(A[i], c, mid)
 
             if count == desired:
                 return A[mid]
@@ -57,6 +56,3 @@ class Solution:
                 minA = mid + 1
             else:
                 maxA = mid
-
-
-

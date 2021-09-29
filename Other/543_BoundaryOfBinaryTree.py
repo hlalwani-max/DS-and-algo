@@ -8,7 +8,7 @@ class TreeNode:
 
 
 class Solution:
-    def boundaryOfBinaryTree(self, root: TreeNode) -> List[int]:
+    def boundaryOfBinaryTree(self, root: TreeNode):
         leftRes = []
         rightRes = []
         children = []

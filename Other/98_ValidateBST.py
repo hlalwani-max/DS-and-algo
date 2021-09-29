@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
+    def isValidBST(self, root) -> bool:
         if not root:
             return True
         self.prev = root.val

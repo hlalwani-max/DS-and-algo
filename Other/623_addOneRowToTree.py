@@ -1,9 +1,9 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 '''
 Input:
@@ -29,7 +29,7 @@ Output:
 '''
 
 class Solution:
-    def addOneRow(self, root: TreeNode, v: int, d: int) -> TreeNode:
+    def addOneRow(self, root, v: int, d: int):
         if d == 1:
             temp = root
             root = TreeNode(v)

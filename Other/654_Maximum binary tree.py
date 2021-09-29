@@ -6,7 +6,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def constructMaximumBinaryTree(self, nums: List[int]) -> TreeNode:
+    def constructMaximumBinaryTree(self, nums) -> TreeNode:
         return self.helper(max(nums), nums)
 
     def helper(self, _max, arr):

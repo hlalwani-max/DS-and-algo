@@ -42,6 +42,7 @@ class Solution:
 
         x = n - 1
         y = 0
+        A_copy = copy.deepcopy(A)
 
     # decrease x in j , reset x in i and increase y in i
 
