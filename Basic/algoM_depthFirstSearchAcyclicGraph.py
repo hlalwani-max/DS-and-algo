@@ -1,0 +1,24 @@
+# https://www.algoexpert.io/questions/Depth-first%20Search
+# Do not edit the class below except
+# for the depthFirstSearch method.
+# Feel free to add new properties
+# and methods to the class.
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+
+    # O(v+e) time - v vertices(nodes) and e edges (children), O(v) space to store all the nodes discovered in dfs.
+    def depthFirstSearch(self, array):
+        # Write your code here.
+        array.append(self.name)
+
+        for child in self.children:
+            child.depthFirstSearch(array)
+
+        return array
+
